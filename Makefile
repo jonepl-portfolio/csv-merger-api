@@ -16,21 +16,8 @@ docker-image:
 start-container:
 	docker-compose up -d
 
-venv:
-	@if [ -d "venv" ]; then \
-		echo "venv already exists"; \
-	else \
-		python -m venv venv; \
-	fi
-
-venv-activate:
-	venv/bin/flask run --no-debugger
-
-venv-deactivate:
-	deactivate
-
-install: venv
-	venv/bin/pip install -r requirements.txt
+destroy-container:
+	docker-compose down
 
 start:
 	python ./app/api.py
@@ -44,3 +31,4 @@ run-skip-test:
 
 test: 
 	python -m pytest -s --cov --cov-fail-under=90 --cov-report=html
+	# venv/bin/flask run --no-debugger
