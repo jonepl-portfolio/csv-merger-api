@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  csv-merger:
+    ports:
+      - "8080:8080"
+    networks:
+      - default  # Uses the default network instead of the external one
+
+networks:
+  portfolio-network:
+    external: false  # Ensures it doesn't try to use the external network locally

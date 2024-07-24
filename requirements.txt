@@ -1,0 +1,15 @@
+# Source Code Dependencies
+Flask==2.3.2
+Flask-Cors==3.0.10
+pandas==1.1.0
+python-dotenv==0.14.0
+
+# Dev Ops Dependencies
+gunicorn==19.9.0
+
+# Testing Dependencies
+pytest==8.1.1
+pytest-cov==5.0.0
+flake8==7.0.0
+black==24.4.0
+ 

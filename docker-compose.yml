@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  csv-merger:
+    image: ${DOCKER_USERNAME}/csv-merger:latest
+    expose:
+      - "8080"
+    restart: always
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1 # Update two tasks at a time
+        delay: 15s  # Wait 15 seconds between updating batches
+        order: start-first  # Start new tasks before stopping old ones
+        failure_action: rollback  # Roll back the update if a failure occurs
+    networks:
+      - portfolio-network  # Attach app1 to the portfolio-network network
+
+networks:
+  portfolio-network:
+    external: true
