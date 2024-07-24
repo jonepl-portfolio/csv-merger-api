@@ -20,8 +20,8 @@ destroy-container:
 	docker-compose down
 
 start:
-	python ./app/api.py
-	# flask --app app/api.py run -p 8080
+	venv/bin/flask run --no-debugger
+
 
 ignore-skip-test:
 	export IGNORE_SKIP=True
