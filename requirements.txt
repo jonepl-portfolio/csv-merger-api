@@ -1,6 +1,6 @@
 # Source Code Dependencies
 Flask==2.3.2
-Flask-Cors==4.01
+Flask-Cors==4.0.1
 pandas==1.1.0
 python-dotenv==0.14.0
 
