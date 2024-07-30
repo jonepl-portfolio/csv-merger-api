@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   csv-merger:
-    image: ${DOCKER_USERNAME}/csv-merger:latest
+    image: jonepl/csv-merger:latest
     expose:
       - "8080"
     restart: always
