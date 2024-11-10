@@ -44,7 +44,7 @@ def test_csvs_e2e(client, tmpdir):
 
     # Call the API endpoint
     response = client.post(
-        "/csvs", content_type="multipart/form-data", data=files_to_upload
+        "/csvs", content_type="application/json", data=files_to_upload
     )
 
     # Assertions

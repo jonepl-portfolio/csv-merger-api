@@ -7,7 +7,7 @@
 
 <br/>
 
-This Dockerized Python application is used for merging CSVs files into a single document. It utilizes an Nginx web server and gunicorn to send & receive API requests. The docker-compose file is meant to be used within a docker-swarm instance.
+This Dockerized Python application is used for merging CSVs files into a single file. It utilizes an Nginx web server and gunicorn to send & receive API requests. The docker-compose file is built to be used within a docker-swarm instance. However you can run this as a container using the overridden  compose file.
 
 ## Usage
 

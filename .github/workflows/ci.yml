@@ -184,4 +184,7 @@ jobs:
           scp -o StrictHostKeyChecking=no -i ~/.ssh/id_ed25519 docker-compose.yml ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:/srv/app/csv-merger-api/docker-compose.yml
 
       - name: Update Docker Swarm service
-        run: ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} 'docker service update --image jonepl/csv-merger:latest hosted-apps_csv-merger'
+        run: |
+          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} \
+          'docker service update --image jonepl/csv-merger:latest hosted-apps_csv-merger'
+          'docker stack deploy -c /srv/app/csv-merger-api/docker-compose.yml hosted-apps || echo "Deployment failed with error $?"'
